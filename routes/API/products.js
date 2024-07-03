@@ -1,4 +1,4 @@
-const { PrismaClient } = require('@caseygustaveson/test-app');
+const { PrismaClient } = require('../../../Database/');
 const prisma = new PrismaClient();
 const express = require('express');
 const router = express.Router();
@@ -23,9 +23,7 @@ router.get('/products/:id', async (req, res) => {
         }
 
         const product = await prisma.product.findUnique({
-            where: {
-                id: productId,
-            },
+            where: { id: productId },
         });
 
         if (!product) {
