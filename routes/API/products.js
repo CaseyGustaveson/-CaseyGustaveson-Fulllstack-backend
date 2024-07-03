@@ -1,4 +1,4 @@
-const { PrismaClient } = require('../../../Database/');
+const { PrismaClient } = require('@caseygustaveson/test-app');
 const prisma = new PrismaClient();
 const express = require('express');
 const router = express.Router();
